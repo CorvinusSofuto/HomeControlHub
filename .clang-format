@@ -1,0 +1,51 @@
+---
+# Hand-translated from AStyle to Clang-Format
+Language: Cpp
+BasedOnStyle: LLVM
+
+ColumnLimit: 140
+
+# --- Indentation & Whitesmith Style ---
+IndentWidth: 3
+TabWidth: 3
+UseTab: Never
+
+# Whitesmith brace layout style
+BreakBeforeBraces: Whitesmiths
+
+# --- Indent Modifications ---
+IndentCaseLabels: true
+NamespaceIndentation: All
+# Keeps comments aligned with code instead of forcing them to column 1
+CommentPragmas: '^ *[^ ]' 
+
+# --- Braces and Blocks ---
+AllowShortBlocksOnASingleLine: Never
+# Automatically wraps single-line loops/ifs in braces
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
+
+# --- Padding and Spacing ---
+# Custom parenthesis padding: pads functions/conditionals, skips casts
+SpacesInParens: Custom
+SpacesInParensOptions:
+  InFunctionDeclaration: true
+  InFunctionCall: true
+  InConditionalStatements: true
+  InEmptyParentheses: false
+  Other: true
+
+# Ensure no padding is added for casts, and no extra space after the cast
+SpaceAfterCasts: false
+
+# Pad operators (e.g., x = y + z)
+SpaceBeforeAssignmentOperators: true
+
+# Pad header conditionals (e.g., if (condition), while (loop))
+SpaceBeforeParens: ControlStatements
+
+# --- Pointer Alignment ---
+# Aligns pointer to the variable name: int *name;
+PointerAlignment: Right
+
+...

@@ -5,14 +5,14 @@ extern "C" {
 #endif
 
 #include "lvgl.h"
+#include "ui.h"
 
-extern lv_obj_t * uiInitialActions;
-extern lv_obj_t * uiScreen;
+int textUpdateCounter = 0; 
+lv_timer_t *textTimer;
+bool backlightHigh = true;
 
-void initializeUI( void );
-void ui_Screen1_screen_init( void );
-void createHelloWorld( void );
-  
+void textTimerHandler( lv_timer_t * timer );
+
 #ifdef __cplusplus
    }
 #endif
